@@ -1,0 +1,20 @@
+Below is the transaction which does the following
+
+- Creates a new customer named Gulshan Jangid
+- Gulshan places an order for a motorcyle
+- Gulshan Does the payment.
+
+------------------------------------------------------------------
+
+
+START TRANSACTION;
+
+INSERT INTO customers values (497, "Gulshan Jangid", "Jangid", "Gulshan", "9971751949", "address1", "address2", "Shahdol", "MP", "484110", "India", 1370, 100000);
+
+INSERT INTO orders values (10426, "2020-06-07","2020-06-15", "2020-06-10", "Shipped", "hehe", 497);
+
+INSERT INTO orderdetails values (10426, "S18_2248", 100, 99.99, 10);
+
+INSERT INTO payments values (491, "AQ84152", "2020-06-09", 5000.00, 10426);
+
+COMMIT;
