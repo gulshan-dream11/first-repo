@@ -1,0 +1,21 @@
+Query to see the invoice details, that showcases the following data: 
+
+Customer Name
+orderNumber
+shippedDate
+payment date
+amount
+quantity ordered
+productName
+image of the productLine.
+
+----------------------------------------------------------------------
+
+select temp.customerName, temp.orderNumber, temp.shippedDate, temp.paymentDate, temp.amount, od.quantityOrdered, pd.productName, pl.image
+from products as pd, productlines as pl, orderdetails as od,
+(
+select c.customerName, o.orderNumber, o.shippedDate, p.paymentDate, p.amount 
+from orders o, payments p, customers c
+where c.customerNumber=121 AND o.customerNumber=121 AND p.customerNumber=121
+) as temp
+where od.orderNumber = temp.orderNumber AND pd.productCode=od.productCode AND pl.productLine=pd.productLine;

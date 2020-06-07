@@ -15,6 +15,6 @@ INSERT INTO orders values (10426, "2020-06-07","2020-06-15", "2020-06-10", "Ship
 
 INSERT INTO orderdetails values (10426, "S18_2248", 100, 99.99, 10);
 
-INSERT INTO payments values (491, "AQ84152", "2020-06-09", 5000.00, 10426);
+INSERT INTO payments values (497, "AQ84152", "2020-06-09", 5000.00, 10426);
 
 COMMIT;
