@@ -1,0 +1,5 @@
+- I was looking for a pure sql way of doing this but couldn't find a way so chose the option of dropping table and filling it with data again.
+- Dropped payments table
+- Created payments table using:
+	CREATE TABLE payments (customerNumber int NOT NULL, checkNumber varchar(50) NOT NULL, paymentDate date NOT NULL, amount decimal(10,2) NOT NULL, orderNumber int NOT NULL, PRIMARY KEY (customerNumber,checkNumber), FOREIGN KEY (orderNumber) REFERENCES orders(orderNumber) );
+- Used Karan's script to generate sql file and sourced that file to fill this table. 
