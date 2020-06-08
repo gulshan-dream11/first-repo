@@ -16,6 +16,15 @@ from products as pd, productlines as pl, orderdetails as od,
 (
 select c.customerName, o.orderNumber, o.shippedDate, p.paymentDate, p.amount 
 from orders o, payments p, customers c
-where c.customerNumber=121 AND o.customerNumber=121 AND p.customerNumber=121
+where c.customerNumber=497 AND o.customerNumber=497 AND p.customerNumber=497
 ) as temp
 where od.orderNumber = temp.orderNumber AND pd.productCode=od.productCode AND pl.productLine=pd.productLine;
+
+
+OUTPUT:
+
+	+----------------+-------------+-------------+-------------+---------+-----------------+--------------------+--------+
+	| customerName   | orderNumber | shippedDate | paymentDate | amount  | quantityOrdered | productName        | image  |
+	+----------------+-------------+-------------+-------------+---------+-----------------+--------------------+--------+
+	| Gulshan Jangid | 10426       | 2020-06-10  | 2020-06-09  | 5000.00 | 100             | 1911 Ford Town Car | <null> |
+	+----------------+-------------+-------------+-------------+---------+-----------------+--------------------+--------+
